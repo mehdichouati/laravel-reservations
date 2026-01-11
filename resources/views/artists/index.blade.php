@@ -20,15 +20,26 @@
     @foreach($artists as $artist)
     <tr>
         <td>{{ $artist->id }}</td>
-        <td>{{ $artist->firstname }}</td>
-        <td>{{ $artist->lastname }}</td>
-        <td>
-            <a href="{{ route('artists.edit', $artist) }}">Modifier</a>
 
-            <form action="{{ route('artists.destroy', $artist) }}" method="POST" style="display:inline;">
+        <!--  Lien vers la page show -->
+        <td>
+            <a href="{{ route('artists.show', $artist->id) }}">
+                {{ $artist->firstname }}
+            </a>
+        </td>
+        <td>
+            <a href="{{ route('artists.show', $artist->id) }}">
+                {{ $artist->lastname }}
+            </a>
+        </td>
+
+        <td>
+            <a href="{{ route('artists.edit', $artist->id) }}">Modifier</a>
+
+            <form action="{{ route('artists.destroy', $artist->id) }}" method="POST" style="display:inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit">Supprimer</button>
+                <button type="submit" onclick="return confirm('Supprimer cet artiste ?')">Supprimer</button>
             </form>
         </td>
     </tr>
