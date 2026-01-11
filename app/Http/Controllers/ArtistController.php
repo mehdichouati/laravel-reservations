@@ -30,6 +30,12 @@ class ArtistController extends Controller
         return redirect()->route('artists.index');
     }
 
+public function show(Artist $artist)
+{
+    return view('artists.show', compact('artist'));
+}
+
+
     public function edit(Artist $artist)
     {
         return view('artists.edit', compact('artist'));
