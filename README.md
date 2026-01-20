@@ -1,37 +1,42 @@
-# Laravel Reservations
+# Projet Réservations – Laravel 12
 
-Projet Laravel — Gestion des artistes (CRUD)
+##Description
+Application web développée avec **Laravel 12** dans le cadre du projet *Roadmap Mapping*.  
+Elle permet la gestion de spectacles, lieux, artistes, représentations, réservations et utilisateurs.
 
-## Description
-Application web permettant de gérer des artistes :
-- ajouter un artiste
-- modifier un artiste
-- supprimer un artiste
-- afficher la liste
+Le projet met l’accent sur la **modélisation de la base de données**, les **relations Eloquent** et la structuration MVC.
 
-Projet réalisé dans le cadre du cours PID (ICC) donné par M Ruth.
+---
 
-## Technologies
-- Laravel
-- PHP
-- MySQL (XAMPP)
+##Fonctionnalités
+- Gestion des artistes, types, rôles, prix et localités
+- Gestion des lieux de spectacle et des spectacles
+- Gestion des représentations (dates, lieux, spectacles)
+- Système de réservations lié aux utilisateurs
+- Relations Eloquent :
+  - OneToMany / ManyToOne
+  - ManyToMany
+- Seeders avec données de test réalistes
+- Affichage via templates Blade
+- Authentification et rôles (admin, member, etc.)
+
+---
+
+## 🛠️ Technologies utilisées
+- PHP 8.x
+- Laravel 12
+- MySQL
 - Blade
-- Git & GitHub
+- Eloquent ORM
 
-## Installation
+---
 
-1. Cloner le projet
-2. Installer les dépendances :
-   composer install
-3. Copier le fichier :
-   cp .env.example .env
-4. Configurer la base de données dans .env
-5. Générer la clé :
-   php artisan key:generate
-6. Lancer les migrations :
-   php artisan migrate
-7. Démarrer le serveur :
-   php artisan serve
-
-## Auteur
-Mehdi Chouati
+##Installation
+```bash
+git clone <repo>
+cd reservations
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
